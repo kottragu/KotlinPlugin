@@ -14,6 +14,7 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <postStartupActivity implementation="com.plugin.kottragu.Notify"/>
+        <notificationGroup displayType="STICKY_BALLOON" id="notification"/>
     </extensions>
 
     <actions>
