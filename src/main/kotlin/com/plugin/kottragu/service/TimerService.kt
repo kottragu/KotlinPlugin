@@ -11,6 +11,12 @@ object TimerService {
     var project: Project? = null
     lateinit var notificationGroup: NotificationGroup
     var time: Int = 3600000 // 1 hour
+        set(value) {
+            field = value*1000*60 // принимает минуты
+        }
+        get() {
+            return field/(1000*60)
+        }
 
     fun opeDialogWindow() {
         val menu = DialogMenu(project!!)
@@ -29,7 +35,7 @@ object TimerService {
         override fun run() {
             val msg: Notification = notificationGroup.createNotification(
                 "Napominanie",
-                "You arbeitst uze " + time / (1000 * 60) + " minutes",
+                "You arbeitest uze $time minutes",
                 "Take a rest for 5 min",
                 NotificationType.INFORMATION
             )

@@ -25,7 +25,7 @@ class DialogMenu (project: Project): DialogWrapper(project) {
         val regex = Regex("\\d+")
         if (regex.matches(textField.text)) {
             super.doOKAction()
-            TimerService.time = textField.text.toInt()*60*1000
+            TimerService.time = textField.text.toInt()
             TimerService.startTimer()
         } else if (!isError) {
             isError = true
